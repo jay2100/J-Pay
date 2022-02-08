@@ -1,9 +1,12 @@
 const express = require('express');
 const qrcode = require('qrcode');
+const path = require('path');
 let app = express();
 
+let pStr = path.join(__dirname);
+
 app.get('/',(req,res) => {
-    res.sendFile('G:/J-Pay/home.html');
+    res.sendFile(pStr+'/home.html');
 });
 
 app.get('/api/qrcode',(req,res) =>{
