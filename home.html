@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payout JPay</title>
+</head>
+<body>
+    <h1 id="title1">Welcome to JPay</h1>
+    <form method="post" action="" onsubmit="return fetchAmt();">
+        Enter Amount: <input type="number" name="amt" id="amt" required>
+        <button type="submit"  >Submit</button>
+    </form>
+    <script>
+        function fetchAmt() {
+            let amt = document.getElementById('amt').value;
+            window.location.href = `/api/qrcode?amt=${amt}`;
+            return false;  
+        }
+    </script>
+</body>
+</html>
